@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Seat Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Reserve Your Seat</h1>
+    </header>
+
+    <main class="main-content">
+        <section class="booking-section">
+            <h2>Book a Table at <span id="${restaurant.name}">${restaurant.name}</span></h2>
+            <form id="bookingForm">
+                <div class="form-row">
+                    <label for="applicantName">Name:</label>
+                    <input type="text" id="applicantName" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="Email">Email:</label>
+                    <input type="email" id="Email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="peopleCount">Number of People:</label>
+                    <input type="number" id="peopleCount" name="peopleCount" min="1" placeholder="Number of People" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="timing">Preferred Timing:</label>
+                    <input type="time" id="timing" name="timing" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="preferences">Preferences:</label>
+                    <select id="preferences" name="preferences" required>
+                        <option value="" disabled selected>Select Preferences</option>
+                        <option value="non-smoking">Non-Smoking</option>
+                        <option value="smoking">Smoking</option>
+                        <option value="outdoor">Outdoor Seating</option>
+                        <option value="indoor">Indoor Seating</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="suggestions">Additional Requests:</label>
+                    <textarea id="suggestions" name="suggestions" placeholder="Any additional requests or suggestions"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food Restaurant Booking. All rights reserved.</p>
+    </footer>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    background-image: url('Reservation_page.jpg');
+    background-position: 50% 50%;
+}
+
+header {
+    padding: 1rem 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: #d48104;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.booking-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.booking-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-row {
+    margin-bottom: 1.5rem;
+}
+
+.form-row label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="time"], select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #2d4dce;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1c56d3;
+}
+
+footer {
+
+    color: rgb(255, 252, 252);
+    text-align: center;
+    padding: 1rem;
+    
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+    .booking-section {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-section {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+</style>
+    <script>
+        
+        document.getElementById('restaurantName').textContent = localStorage.getItem('restaurantName') || 'dummy';
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("Your booking has been confirmed.");
+        });
+    </script>
+</body>
+</html>

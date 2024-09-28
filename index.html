@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY FOOD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p style="background-image: url('img_girl.jpg');"></p>
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="links">
+                    <a onclick="window.location.href='Forgot_password.html';">Forgot Password?</a>
+                    <a onclick="window.location.href='new_user.html';">New User?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy;  HAPPY FOOD. All rights reserved.</p>
+    </footer>
+
+    <script src="login.js"></script>
+
+    <style>
+body 
+{
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('login_page.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding-left: 700px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: .55rem;
+    border-radius: .25rem;
+    cursor: pointer;
+    width: 107%;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.links a {
+    color: #07090b;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.login-form
+{
+    background: rgb(224,205,157);
+    background: radial-gradient(circle, rgba(224,205,157,1) 0%, rgba(227,207,204,1) 53%);
+    padding-left: 70px;
+    padding-right: 90px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+}
+
+h2{
+    text-align: center;
+    padding-left: 25px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: rgb(9, 8, 8);
+    padding: 5px 0;
+}
+    </style>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Food Restaurant Reservation</h1>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="location">Enter Location:</label>
+                    <input type="text" id="locationInput" name="location" placeholder="Enter a city" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Food Type:</label>
+                    <input type="radio" id="veg" name="foodType" value="veg" checked>
+                    <label for="veg">Veg</label>
+                    <input type="radio" id="nonveg" name="foodType" value="nonveg">
+                    <label for="nonveg">Non-Veg</label>
+                </div>
+
+                <button type="submit">Search Restaurants</button>
+                <a onclick="window.location.href='Booking status.html';"></a>
+            </form>
+        </section>
+
+        <section class="results-section" id="results">
+            <h2>Available Restaurants</h2>
+            <div id="restaurantList" class="restaurant-list">
+            </div>
+          
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food Restaurant Reservation</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    background-image: url('Firefly food 16003.jpg');
+    background-size: cover;
+    
+}
+
+header {
+    background-color: #0735aa;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    
+}
+
+.search-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    background: rgb(227,204,114);
+    background: radial-gradient(circle, rgba(227,204,114,1) 63%, rgba(215,193,103,1) 80%, rgba(222,187,49,1) 89%, rgba(202,164,10,1) 100%, rgba(220,186,72,1) 100%);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"], select, input[type="radio"], button {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    width: 100%;
+}
+
+button {
+    background-color: #478aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: auto;
+}
+
+button:hover {
+    background-color: #007bff;
+}
+
+.results-section {
+    background: rgb(227,204,114);
+    background: radial-gradient(circle, rgba(227,204,114,1) 63%, rgba(215,193,103,1) 80%, rgba(222,187,49,1) 89%, rgba(202,164,10,1) 100%, rgba(220,186,72,1) 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurant-item {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.restaurant-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.restaurant-item h3 {
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .restaurant-item {
+        width: 48%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .restaurant-item {
+        width: 30%;
+    }
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+    <script>
+  document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const userLocation = document.getElementById('locationInput').value.toLowerCase().trim();
+    const foodType = document.querySelector('input[name="foodType"]:checked').value;
+    
+    const restaurants = [
+        { name: "SS HYDERABAD BIRIYANI", type: "nonveg", location: "coimbatore", image: "photos/Firefly indian food list 72387.jpg" },
+        { name: "SUBBU MESS", type: "nonveg", location: "coimbatore", image: "photos/Firefly mutton biriyani 44731.jpg" },
+        { name: "HOTEL UNLIMETED", type: "nonveg", location: "coimbatore", image: "photos/Firefly fish biriyani 72387.jpg" },
+        { name: "PANJAVARNAM", type: "nonveg", location: "coimbatore", image: "photos/Firefly food items indian single food 87670.jpg" },
+        { name: "THOPPI VAPPA", type: "nonveg", location: "coimbatore", image: "photos/Firefly food items indian single food 6827.jpg" },
+        { name: "MUNIYANDI VILAS", type: "nonveg", location: "coimbatore", image: "photos/Firefly food items indian single food 74065.jpg" },
+        { name: "SUBBU MESS", type: "veg", location: "coimbatore", image: "https://via.placeholder.com/300?text=Veggie+Delight" },
+        { name: "ANNAPOORNA", type: "veg", location: "coimbatore", image: "https://via.placeholder.com/300?text=Veggie+Delight" },
+        { name: "Nellai Glory Mess", type: "veg", location: "Erode", image: "photos/Firefly food items indian single food 6827.jpg" },
+        { name: "SARAVANABHAVAN", type: "veg", location: "chennai", image: "https://via.placeholder.com/300?text=Green+Bowl" },
+        { name: "Meat Lovers", type: "nonveg", location: "pollachi", image: "https://via.placeholder.com/300?text=Meat+Lovers" },
+        { name: "Spice Grill", type: "veg", location: "pollachi", image: "https://via.placeholder.com/300?text=Spice+Grill" }
+    ];
+
+    const filteredRestaurants = restaurants.filter(restaurant => 
+        restaurant.location.toLowerCase() === userLocation && restaurant.type === foodType
+    );
+    
+    const restaurantList = document.getElementById('restaurantList');
+    restaurantList.innerHTML = ""; 
+
+    if (filteredRestaurants.length > 0) {
+        filteredRestaurants.forEach(restaurant => {
+            const div = document.createElement('div');
+            div.className = 'restaurant-item';
+            div.innerHTML = `
+                <img src="${restaurant.image}" alt="${restaurant.name}">
+                <h3>${restaurant.name}</h3>
+                <button class="book-btn" onclick="bookRestaurant('${restaurant.name}')">Book Now</button>
+            `;
+            restaurantList.appendChild(div);
+        });
+    } else {
+        restaurantList.innerHTML = "<p>No restaurants found for the given location and food type.</p>";
+    }
+});
+
+    </script>
+</body>
+</html>

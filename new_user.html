@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <h2>New User Registration</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" class="form-control" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; HAPPY FOOD. All rights reserved.</p>
+    </footer>
+    <script src="registration.js"></script>
+
+    <style>
+        body {
+            background-image: url('new_user.jpg');
+            background-size:contain;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+        }
+
+        .registration-form {
+            background: rgb(224,205,157);
+            background: radial-gradient(circle, rgb(223, 207, 165) 0%, rgb(210, 200, 199) 53%);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+           
+        }
+
+        h2 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            padding-right: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: .5rem;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: .5rem;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: .70rem;
+            border-radius: .25rem;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: rgb(9, 8, 8);
+            padding: 5px 0;
+}
+    </style>
+</body>
+</html>
